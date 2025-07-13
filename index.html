@@ -7,7 +7,7 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+      background-color: #fefefe;
       color: #333;
       display: flex;
       flex-direction: column;
@@ -16,28 +16,35 @@
       height: 100vh;
       margin: 0;
       text-align: center;
-      padding: 0 20px;
+      padding: 1rem;
     }
     h1 {
-      font-size: 1.8rem;
+      font-size: 1.5rem;
     }
     p {
       font-size: 1rem;
-      margin-top: 10px;
     }
   </style>
-  <script>
-    const now = new Date();
-    const deadline = new Date("2025-07-13T16:59:59Z"); // 13 Juli 2025 pukul 23:59:59 WIB
-    const destination = "https://drive.google.com/file/d/1CqRaJjgKs4ggb-1DrZs05CBbiXe64jWT/view?usp=sharing"; // Ganti ini ke link tujuanmu
-
-    if (now < deadline) {
-      window.location.replace(destination);
-    }
-  </script>
 </head>
 <body>
-  <h1>Link ini sudah kedaluwarsa ⏰</h1>
-  <p>Silakan hubungi panitia atau admin untuk mendapatkan informasi terbaru.</p>
+  <h1>Sedang mengalihkan ke halaman tujuan...</h1>
+  <p>Jika tidak dialihkan dalam 3 detik, silakan klik <a href="https://drive.google.com/file/d/1CqRaJjgKs4ggb-1DrZs05CBbiXe64jWT/view?usp=sharing" target="_blank">tautan ini</a>.</p>
+
+  <script>
+    const now = new Date();
+    const deadline = new Date("2025-07-13T16:59:59Z"); // 23:59:59 WIB
+    const destination = "https://drive.google.com/file/d/1CqRaJjgKs4ggb-1DrZs05CBbiXe64jWT/view?usp=sharing";
+
+    if (now < deadline) {
+      setTimeout(() => {
+        window.location.href = destination;
+      }, 3000); // delay 3 detik agar sempat terlihat
+    } else {
+      document.body.innerHTML = `
+        <h1>Link ini sudah kedaluwarsa ⏰</h1>
+        <p>Silakan hubungi panitia atau admin untuk mendapatkan info terbaru.</p>
+      `;
+    }
+  </script>
 </body>
 </html>
