@@ -3,18 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Redirect Sedang Diproses...</title>
+  <title>Mengalihkan...</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+      padding: 0 20px;
+    }
+    h1 {
+      font-size: 1.8rem;
+    }
+    p {
+      font-size: 1rem;
+      margin-top: 10px;
+    }
+  </style>
   <script>
     const now = new Date();
     const deadline = new Date("2025-07-13T16:59:59Z"); // 13 Juli 2025 pukul 23:59:59 WIB
+    const destination = "https://drive.google.com/file/d/1CqRaJjgKs4ggb-1DrZs05CBbiXe64jWT/view?usp=sharing"; // Ganti ini ke link tujuanmu
 
     if (now < deadline) {
-      window.location.href = "hhttps://drive.google.com/file/d/1CqRaJjgKs4ggb-1DrZs05CBbiXe64jWT/view?usp=sharing"; // Ganti dengan link aslimu
+      window.location.replace(destination);
     }
   </script>
 </head>
 <body>
-  <h1>Link ini sudah kedaluwarsa</h1>
-  <p>Silakan hubungi panitia untuk informasi terbaru. Terima kasih!</p>
+  <h1>Link ini sudah kedaluwarsa ⏰</h1>
+  <p>Silakan hubungi panitia atau admin untuk mendapatkan informasi terbaru.</p>
 </body>
 </html>
